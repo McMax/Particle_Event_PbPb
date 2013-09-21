@@ -44,7 +44,7 @@ void Event::AddParticle(UInt_t pid, Short_t charge, Float_t bx, Float_t by, Floa
 	(charge < 0) ? (fNneg++) : (fNpos++);
 }
 
-void Event::AddParticle(const Particle& particle)
+void Event::AddParticle(Particle& particle)
 {
 	new ((*fParticles) [fNpa]) Particle(particle);
 	fNpa++;
