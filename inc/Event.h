@@ -30,6 +30,7 @@ public:
 	void AddParticle(UInt_t, Short_t, Float_t, Float_t, Float_t, Float_t, Float_t, Float_t, Float_t, Float_t, Float_t,
 			Int_t, Int_t, Int_t, Int_t);
 	void AddParticle(Particle&);
+	void AddParticle(Particle&, UInt_t);
 	void Clear();
 
 	ClassDef(Event,1);

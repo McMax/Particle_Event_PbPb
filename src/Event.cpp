@@ -51,6 +51,13 @@ void Event::AddParticle(Particle& particle)
 	(particle.GetCharge() < 0) ? (fNneg++) : (fNpos++);
 }
 
+void Event::AddParticle(Particle& particle, UInt_t new_pid)
+{
+	new ((*fParticles) [fNpa]) Particle(particle, new_pid);
+	fNpa++;
+	(particle.GetCharge() < 0) ? (fNneg++) : (fNpos++);
+}
+
 void Event::Clear()
 {
 	fParticles->Clear();

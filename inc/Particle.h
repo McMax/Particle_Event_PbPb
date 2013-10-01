@@ -36,6 +36,7 @@ class Particle : public TObject
 public:
 	Particle();
 	Particle(Particle&);
+	Particle(Particle&, UInt_t);	//needed in Mixer
 	Particle(UInt_t, Short_t, Float_t, Float_t, Float_t, Float_t, Float_t,
 		Float_t, Float_t, Float_t, Float_t,	//dE/dx global, dE/dx VTPC1, dE/dx VTPC2, dE/dx MTPC
 		Int_t, Int_t, Int_t, Int_t);	//number of dE/dx points: global, VTPC1, VTPC2, MTPC
@@ -104,7 +105,7 @@ public:
 	void SetBpar(Float_t, Float_t);
 	void SetP(Float_t, Float_t, Float_t);
 	void Setdedx(Float_t, Float_t, Float_t, Float_t);
-	void SetNdedx(Float_t, Float_t, Float_t, Float_t);
+	void SetNdedx(Int_t, Int_t, Int_t, Int_t);
 	void SetVTPC1points(Float_t, Float_t, Float_t, Float_t);
 	void SetVTPC2points(Float_t, Float_t, Float_t, Float_t);
 	void SetMTPCpoints(Float_t, Float_t, Float_t, Float_t);

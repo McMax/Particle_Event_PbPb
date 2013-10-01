@@ -58,6 +58,11 @@ void ParticleTree::AddParticle(Particle& ref_part)
 	event->AddParticle(ref_part);
 }
 
+void ParticleTree::AddParticle(Particle& ref_part, UInt_t new_pid)
+{
+	event->AddParticle(ref_part, new_pid);
+}
+
 void ParticleTree::Close()
 {
 	tree->AutoSave("overwrite");

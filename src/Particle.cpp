@@ -69,6 +69,42 @@ Particle::Particle(Particle& part_ref)
 	fMTPC_Ey = part_ref.fMTPC_Ey;
 }
 
+Particle::Particle(Particle& part_ref, UInt_t new_pid)
+{
+	fPid = new_pid;
+	fCharge = part_ref.fCharge;
+
+	fBx = part_ref.fBx;
+	fBy = part_ref.fBy;
+
+	fPx = part_ref.fPx;
+	fPy = part_ref.fPy;
+	fPz = part_ref.fPz;
+
+	fdEdx = part_ref.fdEdx;
+	fdEdxVtpc1 = part_ref.fdEdxVtpc1;
+	fdEdxVtpc2 = part_ref.fdEdxVtpc2;
+	fdEdxMtpc = part_ref.fdEdxMtpc;
+
+	fNdEdx = part_ref.fNdEdx;
+	fNdEdxVtpc1 = part_ref.fNdEdxVtpc1;
+	fNdEdxVtpc2 = part_ref.fNdEdxVtpc2;
+	fNdEdxMtpc = part_ref.fNdEdxMtpc;
+
+	fVTPC1_Sx = part_ref.fVTPC1_Sx;
+	fVTPC1_Sy = part_ref.fVTPC1_Sy;
+	fVTPC1_Ex = part_ref.fVTPC1_Ex;
+	fVTPC1_Ey = part_ref.fVTPC1_Ey;
+	fVTPC2_Sx = part_ref.fVTPC2_Sx;
+	fVTPC2_Sy = part_ref.fVTPC2_Sy;
+	fVTPC2_Ex = part_ref.fVTPC2_Ex;
+	fVTPC2_Ey = part_ref.fVTPC2_Ey;
+	fMTPC_Sx = part_ref.fMTPC_Sx;
+	fMTPC_Sy = part_ref.fMTPC_Sy;
+	fMTPC_Ex = part_ref.fMTPC_Ex;
+	fMTPC_Ey = part_ref.fMTPC_Ey;
+}
+
 void Particle::Clear()
 {
 	fPid = 0;
@@ -101,7 +137,7 @@ void Particle::Setdedx(Float_t dedx, Float_t dedx_vtpc1, Float_t dedx_vtpc2, Flo
 	fdEdxMtpc = dedx_mtpc;
 }
 
-void Particle::SetNdedx(Float_t ndedx, Float_t ndedx_vtpc1, Float_t ndedx_vtpc2, Float_t ndedx_mtpc)
+void Particle::SetNdedx(Int_t ndedx, Int_t ndedx_vtpc1, Int_t ndedx_vtpc2, Int_t ndedx_mtpc)
 {
 	fNdEdx = ndedx;
 	fNdEdxVtpc1 = ndedx_vtpc1;
