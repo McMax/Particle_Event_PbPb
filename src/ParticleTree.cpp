@@ -30,17 +30,21 @@ UInt_t ParticleTree::Check()
 	return event->GetNpa();
 }		
 
-void ParticleTree::EndEvent()
+UInt_t ParticleTree::EndEvent()
 {
-	using namespace std;
-	
+	UInt_t particles = event->GetNpa();
 	tree->Fill();
 	event->Clear();
+
+	return particles;
 }
 
-void ParticleTree::CancelEvent()
+UInt_t ParticleTree::CancelEvent()
 {
+	UInt_t particles = event->GetNpa();
 	event->Clear();
+
+	return particles;
 }
 
 void ParticleTree::AddParticle(Short_t charge, Float_t bx, Float_t by,  Float_t px, Float_t py, Float_t pz, Float_t dedx, Float_t dedx_vtpc1, Float_t dedx_vtpc2, Float_t dedx_mtpc, Int_t ndedx, Int_t ndedx_vtpc1, Int_t ndedx_vtpc2, Int_t ndedx_mtpc)
