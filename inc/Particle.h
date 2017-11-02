@@ -5,7 +5,7 @@
 
 class Particle : public TObject
 {
-	UInt_t fPid;		//Particle index
+	UInt_t fPid;
 	Short_t fCharge;	//Particle absolute charge
 	Float_t fBx;		//Particle bx parameter
 	Float_t fBy;		//Particle by parameter
