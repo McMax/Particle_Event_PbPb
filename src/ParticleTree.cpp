@@ -59,7 +59,7 @@ void ParticleTree::AddParticle(UInt_t pid, Short_t charge, Float_t px, Float_t p
 
 void ParticleTree::AddParticle(Particle& ref_part)
 {
-	event->AddParticle(ref_part);
+	event->AddParticle(ref_part, ++part_id);
 }
 
 void ParticleTree::AddParticle(Particle& ref_part, UInt_t new_pid)

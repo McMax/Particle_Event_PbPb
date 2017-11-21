@@ -1,5 +1,6 @@
 #include "TObject.h"
 #include "Particle.h"
+#include <iostream>
 
 Particle::Particle()
 {
@@ -103,6 +104,17 @@ void Particle::SetNdedx(Int_t ndedx, Int_t ndedx_vtpc1, Int_t ndedx_vtpc2, Int_t
 Particle::~Particle()
 {
 
+}
+
+void Particle::Print()
+{
+	using namespace std;
+
+	cout << "[" << fPid << "]: ch=" << fCharge << ", px=" << fPx << ", py=" << fPy << ", pz=" << fPz << endl;
+	cout << "\tTotal dE/dx=" << fdEdx << ", " << fNdEdx << " dE/dx points" << endl;
+	cout << "\tVTPC1: dE/dx=" << fdEdxVtpc1 << ", " << fNdEdxVtpc1 << " dE/dx points" << endl;
+	cout << "\tVTPC2: dE/dx=" << fdEdxVtpc2 << ", " << fNdEdxVtpc2 << " dE/dx points" << endl;
+	cout << "\tMTPC: dE/dx=" << fdEdxMtpc << ", " << fNdEdxMtpc << " dE/dx points" << endl;
 }
 
 ClassImp(Particle);

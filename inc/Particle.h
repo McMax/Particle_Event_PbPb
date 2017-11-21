@@ -28,6 +28,7 @@ public:
 		Int_t, Int_t, Int_t, Int_t);	//number of dE/dx points: global, VTPC1, VTPC2, MTPC
 	virtual ~Particle();
 
+	void Print();
 	void Clear();
 
 	inline UInt_t GetPid() const { return fPid;}
